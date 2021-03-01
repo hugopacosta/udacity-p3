@@ -5,27 +5,53 @@ body{
 
 #app{
     display: grid;
-    grid-auto-rows: minmax(150px, auto);
+    grid-auto-rows: minmax(min-content, 120px);
     /* grid-template-columns:  */
     height:100vh;
     background: #f23557;
     color: #f0d43a;
     justify-content: center;
-    grid-gap: 1em;
+    grid-gap: 0.2em;
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
 }
 
 .holder{
+    height: auto;
+}
 
+.zip{
+    height: fit-content;
+}
+
+.feel{
+    display: grid;
+    flex-direction: column;
+}
+
+.myInput{
+    margin-bottom: 30px;
+}
+
+.button-holder{
+    display: flex;
+    justify-content: center;
+}
+
+.headline-holder{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding-bottom: 40px;
 }
 
 .entry{
+    margin-top: 80px;
     background: rgba(59, 74, 107, .4);
 }
 
 #entryHolder{
-
+    min-height: 150px;
 }
 
 #date{
@@ -41,10 +67,12 @@ body{
 }
 
 .headline {
-
+    font-size: 4.5em;
+    
 }
-.title{
 
+.title{
+    margin-bottom: 20px;
 }
 
 /*  Basic Styling To Override Default For Basic HTML Elements */
@@ -65,8 +93,8 @@ input{
 }
 
 button{
-    width: 400px;
-    height: 100px;
+    width: 360px;
+    height: 70px;
     background: #3b4a6b;
     color: #f0d43a;
     font-size: 26px;
