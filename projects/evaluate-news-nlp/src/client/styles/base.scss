@@ -5,10 +5,15 @@ body {
 }
 
 main {
-    flex: 2;
+    flex: 3;
 }
 
 section {
     max-width: 800px;
     margin: 50px auto;
+}
+
+#results {
+    display: flex;
+    flex-direction: column;
 }

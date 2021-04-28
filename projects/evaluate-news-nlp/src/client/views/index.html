@@ -1,13 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
+        <link rel="shortcut icon" href="#">
         <meta charset="utf-8">
         <title>Test</title>
-        <link rel="stylesheet" href="/styles/resets.css">
-        <link rel="stylesheet" href="/styles/base.css">
-        <link rel="stylesheet" href="/styles/header.css">
-        <link rel="stylesheet" href="/styles/form.css">
-        <link rel="stylesheet" href="/styles/footer.css">
     </head>
 
     <body>
@@ -23,15 +19,21 @@
 
         <main>
             <section>
-                <form class="" onsubmit="return handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
-                    <input type="submit" name="" value="submit" onclick="return handleSubmit(event)" onsubmit="return handleSubmit(event)">
+                <form class="">
+                    <input id="url-input" type="text" name="input" value="" placeholder="Name">
+                    <input id="generate" type="submit" name="" value="submit">
                 </form>
             </section>
 
             <section>
-                <strong>Form Results:</strong>
-                <div id="results"></div>
+                <strong>Analysis Result:</strong>
+                <div id="results">
+                    <span id="agreement"></span>
+                    <span id="confidence"></span>
+                    <span id="irony"></span>
+                    <span id="subjectivity"></span>
+                    <span id="score"></span>
+                </div>
             </section>
         </main>
 
