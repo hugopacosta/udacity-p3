@@ -16,6 +16,6 @@ describe("Testing the URL Checker methods", () => {
     });
 
     test("Testing the checkUrl() function", () => {
-        expect(checkUrl('ww.google.com')).toBe(false);
+        expect(checkUrl('wwwgoogleom')).toBe(false);
     });
 });

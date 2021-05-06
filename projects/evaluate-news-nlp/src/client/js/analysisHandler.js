@@ -1,3 +1,5 @@
+import { checkUrl } from './urlChecker'
+
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('generate').addEventListener('click', retrieveAnalysis);
 });
@@ -5,11 +7,16 @@ document.addEventListener('DOMContentLoaded', function () {
 function retrieveAnalysis(e){
     e.preventDefault();
     const urlInput = document.getElementById('url-input').value;
-    document.getElementById('agreement').innerHTML = 'Loading...'
-    getSentimentAnalysis(urlInput)
-    .then(function(data){
-        console.log(data);
-    });
+    if(checkUrl(urlInput)){
+        document.getElementById('status').innerHTML = 'Loading...'
+        getSentimentAnalysis(urlInput)
+        .then(function(data){
+            console.log(data);
+        });
+    } else {
+        document.getElementById('status').innerHTML = 'Invalid URL'
+        cleanUI();
+    }
 }
 
 const getSentimentAnalysis = async (urlInput)=>{
@@ -25,11 +32,20 @@ const getSentimentAnalysis = async (urlInput)=>{
 }
 
 function updateUI(response){
-    document.getElementById('agreement').innerHTML = `Agreement: ${response.agreement}`
-    document.getElementById('confidence').innerHTML = `Confidence: ${response.confidence}`
-    document.getElementById('irony').innerHTML = `Irony: ${response.irony}`
-    document.getElementById('subjectivity').innerHTML = `Subjectivity: ${response.subjectivity}`
-    document.getElementById('score').innerHTML = `Score: ${response.score_tag}`
+    document.getElementById('status').innerHTML = 'Success!'
+    document.getElementById('agreement').innerHTML = `${response.agreement}`
+    document.getElementById('confidence').innerHTML = `${response.confidence}`
+    document.getElementById('irony').innerHTML = `${response.irony}`
+    document.getElementById('subjectivity').innerHTML = `${response.subjectivity}`
+    document.getElementById('score').innerHTML = `${response.score_tag}`
+}
+
+function cleanUI(){
+    document.getElementById('agreement').innerHTML = '';
+    document.getElementById('confidence').innerHTML = '';
+    document.getElementById('irony').innerHTML = '';
+    document.getElementById('subjectivity').innerHTML = '';
+    document.getElementById('score').innerHTML = '';
 }
 
 export { retrieveAnalysis, updateUI }
