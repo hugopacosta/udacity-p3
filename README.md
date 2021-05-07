@@ -10,16 +10,16 @@ First, `cd` into the root folder and run
 This will install all the necessary packages.
 
 Now, to run the dev server script, type:
--`npm run build-dev`
+- `npm run build-dev`
 
 To build the project, run:
--`npm run build-prod`
+- `npm run build-prod`
 
 To start the server, run:
--`npm start`
+- `npm start`
 
 Finally, to run the tests scripts, type:
--`npm test`
+- `npm test`
 
 
 This repo is your starter code for the project. It is the same as the starter code we began with in lesson 2. Install and configure Webpack just as we did in the course. Feel free to refer to the course repo as you build this one, and remember to make frequent commits and to create and merge branches as necessary!
