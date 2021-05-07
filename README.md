@@ -7,6 +7,7 @@ Now just rename the file to .env and you are ready to run the project.
 
 First, `cd` into the root folder and run
 - `npm install`  
+
 This will install all the necessary packages.
 
 Now, to run the dev server script, type:
